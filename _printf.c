@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 				count++;
 			}
 			else if (format[i + 1] == 's')
-            {
+			{
                 char *p = va_arg(args, char*);
                 printString(p, buffer, &buffer_count);
                 count++;
@@ -150,7 +150,6 @@ int _printf(const char *format, ...)
         }
     }
 
-    // Flush the remaining buffer
     if (buffer_count > 0)
         flush_buffer(buffer, &buffer_count);
 

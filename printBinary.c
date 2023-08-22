@@ -9,13 +9,14 @@
  */
 void printBinary(unsigned int num, char *buffer, int *count)
 {
+	char binary[32];
+	int binaryCount = 0;
+
 	if (num == 0)
 	{
 		buffer[(*count)++] = '0';
 		return;
 	}
-	char binary[32];
-	int binaryCount = 0;
 
 	while (num > 0)
 	{

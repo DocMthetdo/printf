@@ -1,30 +1,15 @@
 #include "main.h"
 
 /**
- * printBinary - Converts an unsigned integer to binary
- *
- * @num: The unsigned integer to convert to binary.
- * @buffer: The buffer to store the binary representation.
- * @count: A pointer to the current position in the buffer.
+ * printBinary - Prints a binary representation of an unsigned integer.
+ * @n: The unsigned integer to print in binary.
+ * @count: A pointer to an integer count.
  */
-void printBinary(unsigned int num, char *buffer, int *count)
+void printBinary(unsigned int n, int *count)
 {
-	char binary[32];
-	int binaryCount = 0;
+	if (n / 2)
+		printBinary(n / 2, count);
 
-	if (num == 0)
-	{
-		buffer[(*count)++] = '0';
-		return;
-	}
-
-	while (num > 0)
-	{
-		binary[binaryCount++] = (num & 1) ? '1' : '0';
-		num >>= 1;
-	}
-	while (binaryCount > 0)
-	{
-		buffer[(*count)++] = binary[--binaryCount];
-	}
+	putchar((n % 2) + '0');
+	(*count)++;
 }
